@@ -1,0 +1,42 @@
+- name: Install zsh
+  pacman: 
+    name: ['zsh']
+  tags:
+    - zsh
+
+- name: Change Shell
+  shell: chsh -s `which zsh`
+  tags:
+    - zsh
+
+- name: Install Oh my zsh
+  shell: curl -L  https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
+  tags:
+    - zsh
+  become: false
+
+
+- name: Install Autosuggestion
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+  tags:
+    - zsh
+  become: false
+
+- name: Install Syntax Highlighting
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  tags:
+    - zsh
+  become: false
+
+
+- name: Install VI Mode
+  ansible.builtin.git:
+    repo: https://github.com/jeffreytse/zsh-vi-mode
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-vi-mode
+  tags:
+    - zsh
+  become: false

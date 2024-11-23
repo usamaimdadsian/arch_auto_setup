@@ -1,0 +1,10 @@
+- hosts: localhost
+  become: true
+  tasks:
+  - import_tasks: tasks/system.yml
+  - import_tasks: tasks/xdman.yml
+  - import_tasks: tasks/zsh.yml
+  - import_tasks: tasks/nvim.yml
+  - import_tasks: tasks/dotfiles.yml
+  - import_tasks: tasks/others.yml
+         

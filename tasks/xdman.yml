@@ -1,0 +1,31 @@
+- name: Download xdman
+  ansible.builtin.shell:
+    cmd: wget https://github.com/subhra74/xdm/releases/download/7.2.11/xdm-setup-7.2.11.tar.xz
+    chdir: /tmp
+  tags:
+    - xdman
+
+
+- name: Extract xdman
+  ansible.builtin.shell:
+    cmd: tar xf xdm-setup-7.2.11.tar.xz
+    chdir: /tmp
+  tags:
+    - xdman
+
+- name: Install xdman
+  ansible.builtin.shell:
+    cmd: sh install.sh
+    chdir: /tmp
+  tags:
+    - xdman
+
+
+
+- name: cleanup  xdman
+  ansible.builtin.shell:
+    cmd: rm install.sh readme.txt xdm-setup-7.2.11.tar.xz
+    chdir: /tmp
+  tags:
+    - xdman
+

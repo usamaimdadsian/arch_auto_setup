@@ -1,0 +1,62 @@
+- name: Instal VIM
+  pacman: name=vim
+  tags:
+    - vim
+
+- name: Install vi symlink
+  ansible.builtin.shell:
+    cmd: yay -S --noconfirm vi-vim-symlink
+  tags:
+    - vim
+  become: false
+
+
+
+- name: Instal Firefox
+  pacman: name=firefox
+  tags:
+    - firefox
+
+
+- name: Install chrome
+  ansible.builtin.shell:
+    cmd: yay -S --noconfirm google-chrome
+  tags:
+    - chrome
+  become: false
+
+
+- name: Install vscode
+  ansible.builtin.shell:
+    cmd: yay -S --noconfirm visual-studio-code-bin
+  tags:
+    - code
+  become: false
+
+
+- name: Install zotero
+  ansible.builtin.shell:
+    cmd: yay -S --noconfirm zotero-bin
+  tags:
+    - zotero
+  become: false
+
+
+
+- name: Install mega sync
+  ansible.builtin.shell:
+    cmd: yay -S --noconfirm megasync-bin
+  tags:
+    - megasync
+  become: false
+
+- name: Instal bitwarden
+  pacman: name=bitwarden
+  tags:
+    - bitwarden
+
+
+- name: Instal obsidian
+  pacman: name=obsidian
+  tags:
+    - obsidian

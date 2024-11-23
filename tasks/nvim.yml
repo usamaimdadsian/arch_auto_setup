@@ -1,0 +1,51 @@
+- name: Install Nvim
+  pacman: name=neovim
+  tags:
+    - nvim
+
+
+- name: Install Nerdfont
+  pacman: name=ttf-jetbrains-mono-nerd
+  tags:
+    - nvim
+
+
+- name: clone nvim configurations
+  ansible.builtin.git:
+    repo: https://github.com/usamaimdadsian/nvim-nvchad-custom.git
+    dest: ~/.config/nvim
+
+  tags:
+    - nvim
+  become: false
+
+- name: Install Tree sitter
+  pacman: 
+    name: ['tree-sitter-cli','tree-sitter']
+  tags:
+    - nvim
+
+- name: Install zathura
+  pacman: name=zathura
+  tags:
+    - nvim
+
+
+- name: Install biber
+  pacman: name=biber
+  tags:
+    - nvim
+
+
+- name: Install ripgrep
+  pacman: name=ripgrep
+  tags:
+    - nvim
+
+
+- name: Install texlive-bibtexextra
+  pacman: 
+    name: ['texlive-bibtexextra',"texlive-binextra"]
+  tags:
+    - nvim
+

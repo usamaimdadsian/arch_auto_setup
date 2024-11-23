@@ -1,0 +1,9 @@
+services:
+  ansible_test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/ansible  # Mount your working directory for live updates
+    tty: true  # Keep the container interactive
+    command: /bin/bash

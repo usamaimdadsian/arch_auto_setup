@@ -1,0 +1,30 @@
+- name: Download dotfiles
+  ansible.builtin.git:
+    repo: https://github.com/usamaimdadsian/dotfiles.git
+    dest: ~/.dotfiles
+
+  tags:
+    - dotfiles
+  become: false
+
+- name: stow all files
+  ansible.builtin.command:
+    cmd: stow --adopt .
+    chdir: "~/.dotfiles"
+  tags: 
+    - dotfiles
+  become: false
+
+
+- name: Fix stow files
+  ansible.builtin.command:
+    cmd: git reset --hard
+    chdir: "~/.dotfiles"
+  tags: 
+    - dotfiles
+  become: false
+
+- name: Apply Plasma Configurations
+  ansible.builtin.command:
+    cmd: konsave -a plasma-setup
+  become: false
