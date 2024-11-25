@@ -60,3 +60,15 @@
   pacman: name=obsidian
   tags:
     - obsidian
+
+
+- name: Instal spectacle
+  pacman: name=spectacle
+  tags:
+    - spectacle
+
+
+- name: Instal obs
+  pacman: name=obs-studio
+  tags:
+    - obs
