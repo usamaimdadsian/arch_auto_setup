@@ -72,3 +72,15 @@
   pacman: name=obs-studio
   tags:
     - obs
+
+
+- name: Install sox
+  pacman: name=sox
+  tags:
+    - sox
+    
+
+- name: Install gwenview
+  pacman: name=gwenview
+  tags:
+    - gwenview
