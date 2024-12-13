@@ -84,3 +84,9 @@
   pacman: name=gwenview
   tags:
     - gwenview
+
+
+- name: Install okular
+  pacman: name=okular
+  tags:
+    - okular
