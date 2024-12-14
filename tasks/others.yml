@@ -90,6 +90,13 @@
   tags:
     - gwenview
 
+- name: Install urdufonts
+  ansible.builtin.shell:
+    cmd: yay -S --noconfirm ttf-urdufonts
+  tags:
+    - urdufonts
+  become: false
+
 
 - name: Install okular
   pacman: name=okular
