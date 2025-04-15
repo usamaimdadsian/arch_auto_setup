@@ -3,12 +3,10 @@
   tags:
     - nvim
 
-
 - name: Install Nerdfont
   pacman: name=ttf-jetbrains-mono-nerd
   tags:
     - nvim
-
 
 - name: clone nvim configurations
   ansible.builtin.git:
@@ -20,8 +18,8 @@
   become: false
 
 - name: Install Tree sitter
-  pacman: 
-    name: ['tree-sitter-cli','tree-sitter']
+  pacman:
+    name: ["tree-sitter-cli", "tree-sitter"]
   tags:
     - nvim
 
@@ -30,22 +28,42 @@
   tags:
     - nvim
 
-
 - name: Install biber
   pacman: name=biber
   tags:
     - nvim
-
 
 - name: Install ripgrep
   pacman: name=ripgrep
   tags:
     - nvim
 
-
 - name: Install texlive-bibtexextra
-  pacman: 
-    name: ['texlive-bibtexextra',"texlive-binextra"]
+  pacman:
+    name: ["texlive-bibtexextra", "texlive-binextra"]
   tags:
     - nvim
 
+- name: Install Pakcages for LazyVim
+  pacman:
+    name:
+      [
+        "luarocks",
+        "fish",
+        "sqlfluff",
+        "fd",
+        "lazygit",
+        "fzf",
+        "tectonic",
+        "texlive-core",
+      ]
+  tags:
+    - nvim
+
+- name: Install npm packages LazyVim
+  community.general.npm:
+    name: ["markdown-toc", "markdownlint-cli2"]
+    global: true
+  become: true
+  tags:
+    - nvim
