@@ -67,3 +67,10 @@
   become: true
   tags:
     - nvim
+
+- name: Install yay package lazyvim
+  ansible.builtin.shell:
+    cmd: yay -S --noconfirm python-jupytext
+  tags:
+    - nvim
+  become: false
