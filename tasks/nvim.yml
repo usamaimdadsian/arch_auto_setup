@@ -59,14 +59,14 @@
       ]
   tags:
     - nvim
-
-- name: Install npm packages LazyVim
-  community.general.npm:
-    name: ["markdown-toc", "markdownlint-cli2"]
-    global: true
-  become: true
-  tags:
-    - nvim
+    
+# - name: Install npm packages LazyVim
+#   community.general.npm:
+#     name: ["markdown-toc", "markdownlint-cli2"]
+#     global: true
+#   become: true
+#   tags:
+#     - nvim
 
 - name: Install yay package lazyvim
   ansible.builtin.shell:

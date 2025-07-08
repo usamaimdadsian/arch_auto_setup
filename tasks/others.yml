@@ -1,8 +1,3 @@
-- name: Instal VIM
-  pacman: name=vim
-  tags:
-    - vim
-
 - name: Instal GVIM
   pacman: name=gvim
   tags:
