@@ -1,22 +1,12 @@
-- name: Instal GVIM
-  pacman: name=gvim
+- name: Instal NTFS
+  pacman: name=ntfs-3g
   tags:
-    - vim
-
-- name: Install vi symlink
-  ansible.builtin.shell:
-    cmd: yay -S --noconfirm vi-vim-symlink
-  tags:
-    - vim
-  become: false
-
-
+    - ntfs
 
 - name: Instal Firefox
   pacman: name=firefox
   tags:
     - firefox
-
 
 - name: Install chrome
   ansible.builtin.shell:
@@ -25,7 +15,6 @@
     - chrome
   become: false
 
-
 - name: Install vscode
   ansible.builtin.shell:
     cmd: yay -S --noconfirm visual-studio-code-bin
@@ -33,15 +22,12 @@
     - code
   become: false
 
-
 - name: Install zotero
   ansible.builtin.shell:
     cmd: yay -S --noconfirm zotero-bin
   tags:
     - zotero
   become: false
-
-
 
 - name: Install mega sync
   ansible.builtin.shell:
@@ -55,30 +41,25 @@
   tags:
     - bitwarden
 
-
 - name: Instal obsidian
   pacman: name=obsidian
   tags:
     - obsidian
-
 
 - name: Instal spectacle
   pacman: name=spectacle
   tags:
     - spectacle
 
-
 - name: Instal obs
   pacman: name=obs-studio
   tags:
     - obs
 
-
 - name: Install sox
   pacman: name=sox
   tags:
     - sox
-    
 
 - name: Install gwenview
   pacman: name=gwenview
@@ -92,8 +73,19 @@
     - urdufonts
   become: false
 
-
 - name: Install okular
   pacman: name=okular
   tags:
     - okular
+
+- name: Install docker
+  pacman:
+    name: ["docker", "docker-compose"]
+  tags:
+    - docker
+
+- name: make docker accessible to user
+  user:
+    name: "{{ansible_user}}"
+    groups: docker
+    append: true

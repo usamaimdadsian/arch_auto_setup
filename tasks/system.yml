@@ -1,30 +1,44 @@
 - name: Install system packages
-  pacman: 
-    name: ['curl', 'wget','tar','unzip','zip','base-devel','stow','openssh','alacritty','xclip','xdotool', 'tmux']
+  pacman:
+    name:
+      [
+        "curl",
+        "wget",
+        "tar",
+        "unzip",
+        "zip",
+        "base-devel",
+        "stow",
+        "openssh",
+        "alacritty",
+        "xclip",
+        "wl-clipboard",
+        "xdotool",
+        "tmux",
+        "cmake",
+      ]
   tags:
     - system
 
 - name: Install Language Supports
   pacman:
-    name: ['go', 'rust', 'luarocks','dotnet-sdk']
+    name: ["go", "rust", "luarocks", "dotnet-sdk"]
   tags:
     - languages
 
-
-
 - name: Install debugpy
-  pacman: 
-    name: ['python-debugpy', 'python-virtualenv', 'python-pip']
+  pacman:
+    name: ["python-debugpy", "python-virtualenv", "python-pip", "python-uv"]
 
   tags:
     - python
 
 - name: Install Node
   pacman:
-    name: ['nodejs', 'npm', 'pnpm']
+    name: ["nodejs", "npm", "pnpm"]
   tags:
     - node
-    
+
 - name: Clone yay repository
   ansible.builtin.git:
     repo: https://aur.archlinux.org/yay.git
@@ -41,7 +55,6 @@
     - yay
   become: false
 
-
 - name: Remove yay directory
   ansible.builtin.shell:
     cmd: "rm -rf yay"
@@ -50,14 +63,9 @@
     - yay
   become: false
 
-
-
-
 - name: Install konsave
   ansible.builtin.command:
     cmd: yay -S --noconfirm konsave
   tags:
     - konsave
   become: false
-
-

@@ -1,3 +1,16 @@
+- name: Instal GVIM
+  pacman: name=gvim
+  tags:
+    - vim
+
+- name: Install vi symlink
+  ansible.builtin.shell:
+    cmd: yay -S --noconfirm vi-vim-symlink
+  tags:
+    - vim
+  become: false
+
+
 - name: Install Nvim
   pacman: name=neovim
   tags:
