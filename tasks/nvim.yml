@@ -1,5 +1,13 @@
+- name: UnInstal VIM
+  pacman:
+    name: vim
+    state: absent
+  tags:
+    - vim
+
 - name: Instal GVIM
-  pacman: name=gvim
+  pacman:
+    name: gvim
   tags:
     - vim
 
@@ -9,7 +17,6 @@
   tags:
     - vim
   become: false
-
 
 - name: Install Nvim
   pacman: name=neovim
@@ -72,7 +79,6 @@
       ]
   tags:
     - nvim
-    
 # - name: Install npm packages LazyVim
 #   community.general.npm:
 #     name: ["markdown-toc", "markdownlint-cli2"]
@@ -81,9 +87,9 @@
 #   tags:
 #     - nvim
 
-- name: Install yay package lazyvim
-  ansible.builtin.shell:
-    cmd: yay -S --noconfirm python-jupytext
-  tags:
-    - nvim
-  become: false
+# - name: Install yay package lazyvim
+#   ansible.builtin.shell:
+#     cmd: yay -S --noconfirm python-jupytext
+#   tags:
+#     - nvim
+#   become: false
