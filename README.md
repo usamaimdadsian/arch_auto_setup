@@ -109,12 +109,3 @@ All these configuraions are in tasks/system.yml
 | **luarocks**            | A package manager for Lua modules, allowing easy installation of Lua libraries.         |
 
 All these configuraions are in tasks/nvim.yml
-
-### dotfiles
-- clone the dot files [repository](https://github.com/usamaimdadsian/dotfiles.git)
-- stow the files
-- apply the plasma setup using konsave
-
-To save your own kde settings run the following command
-`konsave -s plasma-setup -f`
-These configurations are in tasks/dotfiles.yml
