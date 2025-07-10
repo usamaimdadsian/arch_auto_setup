@@ -79,7 +79,7 @@ All these configuraions are in tasks/zsh.yml except alacritty which is in tasks/
 | Name             |  Description                            |
 |------------------|-----------------------------------------|
 | **go**   |  |
-| **rust**   | A group of essential packages (like `gcc`, `make`) for building software in Arch Linux. |
+| **rust**   |  |
 | **luarocks**   | I need that for neovim configurations |
 | **dotnet-sdk**   | I do c# development and neovim also need it for setup |
 | **python-debugpy**        | Neovim configuraions require it                    |
