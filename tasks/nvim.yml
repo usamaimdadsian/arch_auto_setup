@@ -76,6 +76,7 @@
         "fzf",
         "tectonic",
         "texlive-core",
+        "rust-analyzer",
       ]
   tags:
     - nvim
