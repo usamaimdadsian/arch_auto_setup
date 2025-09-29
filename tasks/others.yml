@@ -46,6 +46,11 @@
   tags:
     - obsidian
 
+- name: Instal pandoc
+  pacman: name=pandoc
+  tags:
+    - obsidian
+
 - name: Instal spectacle
   pacman: name=spectacle
   tags:
